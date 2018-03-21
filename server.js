@@ -16,11 +16,11 @@ hbs.registerHelper('getCurrentYear',()=>{
     return new Date().getFullYear()
 });
 
-app.use((req,res,next)=>{
-  res.render('maintenance.hbs')
-//  next();
-
-});
+// app.use((req,res,next)=>{
+//   res.render('maintenance.hbs')
+// //  next();
+//
+// });
 app.use(express.static(__dirname + '/private'));
 app.use(express.static(__dirname + '/public'));
 
@@ -73,6 +73,12 @@ app.get('/',(req,res)=>{
   })
 });
 
+app.get('/portfolio',(req,res)=>{
+  res.render('portfolio.hbs',{
+    pageTitle:'Portfolio page'
+
+  })
+});
 
 //route2
 // app.get('/about',(req,res)=>{
